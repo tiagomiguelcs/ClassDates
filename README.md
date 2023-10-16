@@ -9,5 +9,5 @@ A Python library/app that returns the list of class dates for a given semester.
 1. Edit the `config.json` by modifying:
   - The start and end date of the academic semester.
   - The day of the week the class occurs (e.g., `0` is Monday, `1` is Tuesday, ...).
-  - The list of breaks (e.g., christmas break).
+  - The list of breaks (e.g., Christmas break).
 2. Run the program as follows: ```python3 main.py -f output.json``` or ```python3 main.py```.
