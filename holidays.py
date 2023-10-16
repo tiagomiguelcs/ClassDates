@@ -40,7 +40,7 @@ def get_holidays_pt(y, format="%d/%m/%Y"):
     dia_todos_santos = datetime.date(y, 11, 1)
     dia_ind = datetime.date(y, 12, 1)
     im_conceicao = datetime.date(y, 12, 8)
-    c_municipal = datetime.date(y, 11, 20)
+    c_municipal = datetime.date(y, 10, 20)
 
     holidays = [
         {"date": ano_novo, "description": "Ano Novo"},
