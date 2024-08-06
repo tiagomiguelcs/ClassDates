@@ -113,6 +113,12 @@ exports.validateConfig = (config) => {
     let end = utils.toMoment(config["end"], format);
     let weekday = config["weekday"]; 
     
+    // Set a default format if undefined 
+    if (format === undefined){
+        config["format"] = "YYYY-MM-DD";
+        format = config["format"];
+    }
+
     // Sundays or Saturdays are not valid class days
     if (weekday == 0 || weekday == 6){
         utils.log("Invalid weekday - Sundays or Saturdays are not valid class days", utils.logTypes.Error);
@@ -139,7 +145,8 @@ exports.validateConfig = (config) => {
 }
 
 exports.generate = (config, DEBUG=false) => {
-    /* Populate with test data */
+    /* 
+    // ## Test Data 
     // Date format
     config["format"] = "YYYY-MM-DD";
     // Semester start date
@@ -150,6 +157,7 @@ exports.generate = (config, DEBUG=false) => {
     config["weekday"]   = 2;
     // Class/curricular unit breaks (e.g., xmas break);
     config["breaks"].push({"start":"2023-12-20", "end":"2024-01-03"});
+    */
 
     if (!this.validateConfig(config)) return;
 
