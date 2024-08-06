@@ -1,5 +1,7 @@
 const moment = require("moment");
-const logTypes = {
+
+
+const logTypes = exports.logTypes = {
 	Success: Symbol("success"),
 	Warning: Symbol("warning"),
 	Error: Symbol("error"),
@@ -7,9 +9,10 @@ const logTypes = {
     Information: Symbol("information")
 }
 
+
 const mWeekdays = {0:"Sun", 1:"Mon", 2:"Tue",3:"Wed", 4:"Thu", 5: "Fri", 6: "Sat"}
 
-exports.toDatetime = (datetime, format) => {
+exports.toMoment = (datetime, format) => {
     // convert to datetime moment object
     let mDatetime = moment(datetime, format);
     // show string
@@ -28,15 +31,9 @@ exports.removeItemsFromArray = (items, array) => {
 }
 
 exports.outputDates = (dates, format, divideOutput=false) => {
-    let weekday=0; 
-    
     for(let i=0; i < dates.length; i++){
-        if (weekday==5 && divideOutput){
-            console.log("\n");
-            weekday=0; // restart weekday to Sunday
-        }
+        if (dates[i].weekday() == 5 && divideOutput) console.log("\n")
         console.log(" - "+dates[i].format(format)+" ("+mWeekdays[dates[i].weekday()]+")");
-        weekday += 1;
     }
 }
 
