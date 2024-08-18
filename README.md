@@ -1,5 +1,5 @@
 # ClassDates
-![](https://img.shields.io/badge/Python-97ca00?style=for-the-badge&logo=python&logoColor=white)
+![](https://img.shields.io/badge/Javascript-97ca00?style=for-the-badge&logo=javascript&logoColor=white)
 ![](https://img.shields.io/badge/JSON-3776AB?style=for-the-badge&logo=json&logoColor=white)
 
 A Python library/app that returns the list of class dates for a given semester.
